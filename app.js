@@ -18,7 +18,9 @@ var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
 
 //mongoose connects file to mongo database
-mongoose.connect('mongodb://localhost:27017/yelp_camp', { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost:27017/yelp_camp', { useNewUrlParser: true });
+mongoose.connect("mongodb://admin:abc1231!@ds113815.mlab.com:13815/yelpcamp");
+
 // to make shortcuts for routes this line should look like the below:
 // mongoose.connect('mongodb://localhost:27017/yelp_camp', { useNewUrlParser: true });
 //automaticly looks for .ejs files
