@@ -17,9 +17,11 @@ var commentRoutes = require("./routes/comments");
 var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
 
+console.log(process.env.DATABASEURL);
 //mongoose connects file to mongo database
 // mongoose.connect('mongodb://localhost:27017/yelp_camp', { useNewUrlParser: true });
-mongoose.connect("mongodb://admin:abc1231!@ds113815.mlab.com:13815/yelpcamp");
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+// mongoose.connect("mongodb://admin:abc1231!@ds113815.mlab.com:13815/yelpcamp");
 
 // to make shortcuts for routes this line should look like the below:
 // mongoose.connect('mongodb://localhost:27017/yelp_camp', { useNewUrlParser: true });
