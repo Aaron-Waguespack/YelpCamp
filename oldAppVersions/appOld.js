@@ -2,12 +2,12 @@ var express    = require ("express");
 var app        = express();
 var mongoose   = require("mongoose");
 var bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({extended: true}));  
+app.use(bodyParser.urlencoded({extended: true}));
 var Campground = require ("./models/campground")
 
 
 //mongoose connects file to mongo database
-mongoose.connect('mongodb://localhost:27017/yelp_camp', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://AaronWaguespack:ADPadp1!@yelpcamp.qwtw8.mongodb.net/test', { useNewUrlParser: true });
 
 
 // creating Campground, call back function after it is finished being created
@@ -18,16 +18,16 @@ mongoose.connect('mongodb://localhost:27017/yelp_camp', { useNewUrlParser: true 
 //         name: "Genric-2 Creek",
 //         image: "https://pixabay.com/get/e03db50f2af41c22d2524518b7444795ea76e5d004b014459df0c87aa5e5bd_340.jpg",
 //         description: "This is a generic campsite by a creek"
-        
+
 //     },
 //     function(err, campground){
 //         if(err){
-            
+
 //             console.log(err);
 //         } else {
 //             console.log("Newly Created Campground: ");
 //             console.log(campground);
-//         }    
+//         }
 //     });
 
 // temperary campground array
@@ -75,14 +75,14 @@ app.post("/campgrounds", function(req, res){
         if(err){
             console.log(err);
         } else{
-    //redirect back to campgrounds page        
+    //redirect back to campgrounds page
             res.redirect("/campgrounds");
-        }    
+        }
     });
 });
 
 //NEW - shows form to submit a post request to add a new campground
-// then redirects us back to /campgrounds as a get 
+// then redirects us back to /campgrounds as a get
 app.get("/campgrounds/new", function(req, res){
     res.render("new.ejs");
 });
