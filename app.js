@@ -20,7 +20,7 @@ var indexRoutes = require("./routes/index");
 console.log(process.env.DATABASEURL);
 //mongoose connects file to mongo database
 // mongoose.connect('mongodb://localhost:27017/yelp_camp', { useNewUrlParser: true });
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://AaronWaguespack:ADPadp1!@yelpcamp.qwtw8.mongodb.net/test', { useNewUrlParser: true });
 // mongoose.connect("mongodb://admin:abc1231!@ds113815.mlab.com:13815/yelpcamp");
 
 // to make shortcuts for routes this line should look like the below:
